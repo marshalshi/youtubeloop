@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>summary show</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="http://portal.shuai.alvafit.com/static/bootstrap/css/bootstrap.min.css" /> <!--need to chagne-->
+    <link rel="stylesheet" href="http://portal.shuai.alvafit.com/static/css/portal_alvafit/summary_show.css" />
+    
+    <script type="text/javascript" src="http://portal.shuai.alvafit.com/static/js/jquery.min.js"></script><!-- need to change -->
+    <script src="http://portal.shuai.alvafit.com/static/bootstrap/js/bootstrap.js"></script><!------------->
+
+    <script type='text/javascript'>
+      var alvakids_debug = true;
+      
+      var alva_widget_mode = 'alvafit';
+      
+      var alvafit_widget_baseurl = 'http://widget.shuai.alvafit.com';
+      var alva_settings = {
+          retailer: 'alvafit demo', // here need to tell Kal
+          brand: '',
+          productType: 'Virtual Sample Pack',
+          productName: 'Jeans', // here need to tell kal
+          alvafit_forced_add_item_flow: true,
+          alvafit_mode: 'team leader',
+      };
+      
+      (function() {
+          var alvajs = document.createElement('script');
+          alvajs.src = ('https:' === document.location.protocol ?
+          'https://widget.alvakids.com/clients/alvafit_demo/js/widget-full.js' :
+          'http://widget.alvakids.com/alvafit_demo/js/widget-secret.js');
+          alvajs.setAttribute('async', 'true');
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(alvajs, s);
+      })();
+    </script>
+    
+
+    <script type="text/javascript" src="http://portal.shuai.alvafit.com/static/js/portal_alvafit/portal_login_logout.js"></script>
+    
+    <body>
+
+      <div class="alvafit_login_area">
+        <img src="http://portal.shuai.alvafit.com/static/images/alva-logo.png" class="alvafit_alva_logo"  style="position: relative; left: 15px; top: 5px;"/>
+        <span class="alvafit_input_area" style="margin-top:10px;">
+          <input type="text" name="email" placeholder="Email address" class="alvafit_input_text"/>
+          <input type="password" name="password" placeholder="Password" class="alvafit_input_text"/>
+          <input type="submit" name="login" value="LOGIN" class="alvafit_login_button"/>
+        </span>
+
+        <p class="alvafit_error">
+        </p>
+        <p style="font-size:12px;float:right;font-family: 'Open Sans Light', 'Open Sans', Arial, sans-serif;">
+          Please login to access ther results of you virtual sample pack and get a list of sizes to purchase.
+        </p>
+      </div>
+
+
+      <div class="alvafit_iframe_show" style="display:none;">
+        <div class="alvafit_iframe_title">
+          <span class="alvafit_left_side">
+            <a href="#" id="alvafit_toggleIframe">
+              <div>
+              </div>
+            </a>
+          </span>
+          <span class="alvafit_left_side" style="line-height: 15px;padding-top: 7px;">
+            <span class="alvafit_virtual_text" style="font-size: 14px;text-transform:uppercase;">Virtual Sample Pack Results </span><br/>
+            <span class="alvafit_retailer_text" style="font-size: 10px;text-transform:capitalize;"></span>
+          </span>
+
+          <span class="alvafit_right_side">
+            <img src="http://portal.shuai.alvafit.com/static/images/alva-logo.png" class="alvafit_alva_logo"  />
+          </span>
+          <span class="alvafit_right_side alvafit_logout">
+            Hi <span id="alvafit_alvauser_name"></span><br/>
+              <a href="#" style="font-size:10px; color:#888;">LOGOUT</a>
+
+          </span>
+        </div>
+
+        <div class="alvafit_iframe">
+
+        </div>
+
+
+        <div class="alvafit_bottom-links">
+        <div class="span3 alvafit_span3">
+          <div class="alvafit_bottom-content">
+            <div class="alvafit_bottom-title" style="width: 142px;">
+              DOWNLOAD FIT REPORT
+            </div>
+            
+            <a href="#" target="_blank" id="alvafit_team_report">
+              <div class="alvafit_bottom-link">
+                <div class="span1 alvafit_inbottom">
+                  <img src="http://portal.shuai.alvafit.com/static/images/alvafit_portal/alvafit_xls.png" />
+                </div>
+                <div class="span2 alvafit_textbottom">
+                  Download the full list of sizes as an excel file (xls) for your convenience.
+                </div>
+              </div>
+            </a>  
+          </div>
+        </div>
+        
+        <div class="span3 alvafit_span3">
+          <div class="alvafit_bottom-content">
+            <div class="alvafit_bottom-title" style="width: 92px;">
+              MISSING SIZES?
+            </div>
+            
+            <a href="#" onclick="alva_openWidget(alva_settings); return false;">
+              <div class="alvafit_bottom-link">
+                <div class="span1 alvafit_inbottom">
+                  <img src="http://portal.shuai.alvafit.com/static/images/alvafit_portal/alvafit_sharing.png" style="width: 35px;"/>
+                </div>
+                <div class="span2 alvafit_textbottom">
+                  Click here to manage your team members remind them or invite more.
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        
+        <div class="span3 alvafit_span3">
+          <div class="alvafit_bottom-content">
+            <div class="alvafit_bottom-title" style="width: 110px;">
+              YOU ARE ALL SET!
+            </div>
+            <div class="alvafit_bottom-link">
+              <div class="span1 alvafit_inbottom">
+                <img src="http://portal.shuai.alvafit.com/static/images/alvafit_portal/alvafit_sharebox.png" />
+              </div>
+              <div class="span2 alvafit_textbottom">
+                If you have the count, you are ready to order the right size assortment!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        </div>
+
+        
+      </div>
+
+    </div>
+
+
+</div>
+</body>
+</html>
