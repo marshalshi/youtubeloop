@@ -1,6 +1,17 @@
 from django.shortcuts import render
 
-def loopone(request, id):
+
+def babe_page(request):
+
+    return render(request, 'babe.html')
+    
+
+
+
+def loopone(request):
+
+    id = request.GET["v"]
+    
     return render(request, 'loopone.html', {'the_id':id})
 
 from django import forms
@@ -58,3 +69,7 @@ def addMyJSCode(file):
         where = head.index(title) + 1
     head.insert(where, link)
     return lh.tostring(root)
+
+
+def gasol(request):
+    return render(request, 'gasol/index.html')

@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from autoloop.views import loopone, search
+from autoloop.views import loopone, search, babe_page, gasol
 from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
@@ -16,8 +16,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    url(r'^(?P<id>.+)/$', loopone, name="loopauto one"),
-    url(r'^$', search,name="search"),
+    url(r'^$', search, name="search"),
+    url(r'^babe/$', babe_page, name="babe"),
+    url(r'^watch/$', loopone, name="loopauto_one"),
+    url(r'gasol/', gasol, name='gasol'),
 )
 
 if settings.DEBUG:
